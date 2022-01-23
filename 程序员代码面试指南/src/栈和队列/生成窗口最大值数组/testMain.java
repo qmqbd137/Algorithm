@@ -1,4 +1,4 @@
-package 生成窗口最大值数组;
+package 栈和队列.生成窗口最大值数组;
 
 /**
  * @author QMQ_bd137

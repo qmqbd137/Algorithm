@@ -1,10 +1,5 @@
-package 求最大子矩阵的大小;
+package 栈和队列.求最大子矩阵的大小;
 
-import 单调栈结构.getNearLess;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.Stack;
 
 /**

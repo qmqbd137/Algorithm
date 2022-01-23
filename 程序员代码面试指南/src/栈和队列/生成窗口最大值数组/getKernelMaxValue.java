@@ -1,7 +1,6 @@
-package 生成窗口最大值数组;
+package 栈和队列.生成窗口最大值数组;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @author QMQ_bd137

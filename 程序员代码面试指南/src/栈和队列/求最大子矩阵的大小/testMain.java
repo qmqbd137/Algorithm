@@ -1,4 +1,4 @@
-package 求最大子矩阵的大小;
+package 栈和队列.求最大子矩阵的大小;
 
 /**
  * @author QMQ_bd137
