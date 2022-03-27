@@ -8,7 +8,7 @@ public class testMain {
     public static void main(String[] args) {
         int[] nums = {4,3,5,4,3,3,6,7};
         int kernel = 2;
-        int[] res = new getKernelMaxValue().soulution(nums, kernel);
+        int[] res = new 栈和队列.生成窗口最大值数组.getKernelMaxValue().soulution(nums, kernel);
         for(int i:res){
             System.out.println(i);
         }
