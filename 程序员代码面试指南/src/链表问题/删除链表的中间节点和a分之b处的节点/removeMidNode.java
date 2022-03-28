@@ -13,13 +13,18 @@ public class removeMidNode<T> {
         }
         int lenth = head.length;
         int mid = lenth/2;
+        Node cur = head;
         if(mid < 1){
             return head;
         }
-        while (mid !=0){
+        if (lenth%2 == 0){
             mid --;
-
         }
+        while (mid !=1){
+            mid --;
+            cur = cur.next;
+        }
+        cur.next = cur.next.next;
         return head;
     }
 }
