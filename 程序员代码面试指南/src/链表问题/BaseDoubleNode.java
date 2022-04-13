@@ -1,4 +1,4 @@
-package 链表问题.打印两个有序链表的公共部分;
+package 链表问题;
 
 /**
  * @author QMQ_bd137

@@ -1,6 +1,6 @@
 package 链表问题.反转链表;
 
-import 链表问题.打印两个有序链表的公共部分.BaseDoubleNode;
+import 链表问题.BaseDoubleNode;
 
 /**
  * @author QMQ_bd137
