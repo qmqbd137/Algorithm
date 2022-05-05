@@ -56,7 +56,7 @@ public class isPalindrome {
         }
 //      步骤一找到中间节点
         BaseNode end = head;
-        BaseNode mid = head.next;
+        BaseNode mid = head;
         BaseNode left = head;
         while (end.next !=null && end.next.next !=null){
             mid = mid.next;//中间节点
@@ -72,6 +72,26 @@ public class isPalindrome {
             mid = rigth;
             rigth = rNext;
         }
+        rigth = mid;
+        boolean res = true;
+        while (left != null && rigth != null){
+            if (left.value != rigth.value){
+                res = false;
+                break;
+            }
+            left = left.next;
+            rigth = rigth.next;
+        }
+//      复原链表  right  由null -》 mid.next (mid已经是右半部分头结点)
+        rigth = mid.next;
+        mid.next = null;
+        while (rigth != null){
+            rNext = rigth.next;
+            rigth.next = mid;
+            mid = rigth;
+            rigth = rNext;
+        }
 
-        if ()
+        return res;
+    }
 }

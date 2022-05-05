@@ -13,8 +13,9 @@ public class testMain {
         head.add(2);
         head.add(2);
         head.add(1);
-        head.add(1);
+        head.add(3);
 
-        System.out.println(isPalindrome.soulution2(head));
+        System.out.println(isPalindrome.soulution3(head));
+        head.printNode();
     }
 }
