@@ -54,24 +54,52 @@ public class isPalindrome {
         if(head == null || head.next == null){
             return true;
         }
-//      步骤一找到中间节点
-        BaseNode end = head;
-        BaseNode mid = head.next;
+        boolean PalindromeFlag = true;
+//      步骤一找到链表右半段起始节点，准备翻转步骤
+        BaseNode end = head;//工件节点,仅为找到右半段起始节点使用
+        BaseNode rightHalf = head.next; //右半段起始节点
         BaseNode left = head;
         while (end.next !=null && end.next.next !=null){
-            mid = mid.next;//中间节点
+            rightHalf = rightHalf.next;//右半段起始节点
             end = end.next.next;//结尾节点
         }
-//      反转右半部分节点  right 右边第一个节点
-        BaseNode rigth = mid.next;
-        mid.next = null;
+
+//      反转右半部分节点  right 右边第一个节点  此时翻转链表结束后 rightReverse的下个节点将为null head节点只留下右半段的第一个节点。
+//      渐变为这种结构  O->O->O->O<-O<-O
+        BaseNode rigthReverse = rightHalf.next;
+        rightHalf.next = null;
         BaseNode rNext = null;
-        while (rigth!=null) {
-            rNext = rigth.next;
-            rigth.next = mid;
-            mid = rigth;
-            rigth = rNext;
+        while (rigthReverse!=null) {
+            rNext = rigthReverse.next;
+            rigthReverse.next = rightHalf;
+//          移动节点到下一位置,以便后续循环翻转下一个节点
+            rightHalf = rigthReverse;
+            rigthReverse = rNext;
+        }
+        rigthReverse = rightHalf;//留存翻转后列表的第一个节点,后面恢复翻转结构。
+        while (rightHalf!=null){
+            if (rightHalf.value != left.value){
+                PalindromeFlag = false;
+//                break;
+            }
+            rightHalf = rightHalf.next;
+            left = left.next;
+        }
+        rightHalf = rigthReverse;
+        rigthReverse = rightHalf.next;
+        rightHalf.next = null;
+        rNext = null;
+        while (rigthReverse != null){
+            rNext = rigthReverse.next;
+            rigthReverse.next = rightHalf;
+            rightHalf = rigthReverse;
+            rigthReverse = rNext;
         }
 
-        if ()
+        while (head!=null){
+            System.out.println(head.value);
+            head = head.next;
+        }
+        return PalindromeFlag;
+    }
 }
