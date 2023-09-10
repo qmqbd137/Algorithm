@@ -24,17 +24,11 @@ public class BaseNode {
 
 
     //头插法，倒序
-    public void addReverse(int value) {
+    public BaseNode addReverse(int value) {
         BaseNode node = new BaseNode(value);
-        if (this.next == null) {
-            this.next = node;
+            node.next = this;
             length += 1;
-            return;
-        }
-        BaseNode temp = this.next;
-        this.next = node;
-        node.next = temp;
-        length += 1;
+            return node;
     }
 
     //尾插法
