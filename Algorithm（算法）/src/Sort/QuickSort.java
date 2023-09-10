@@ -34,7 +34,13 @@ public class QuickSort {
 	private static int partition(Comparable[] martix, int lIndex, int rIndex) {
 		Comparable keyWord = martix[lIndex];
 		int lswapIndex = lIndex;
+//      Q: 防止数组越界设立该条件,但为什么这么做呢,可以是右坐标从rIndex开始,并且下方循环条件变为 rIndex--的模式?
+		/*
+		* A: 若从rIndex开始 循环条件为rIndex-- 则无法满足算法运行基本条件，martix[rIdex--] 这种表达式将会造成 循环判定条件中使用的是martix[rIndex]
+		* 而下方循环结束判断条件中 将使用rIndex -1 进行判断 提前结束循环,导致分割结果不正确
+		*/
 		int rswapIndex = rIndex+1;
+
 		while (true) {
 //			先对lswaoIndex进行加操作 跳过了key值
 			while (martix[++lswapIndex].compareTo(keyWord) <= 0 ) {
